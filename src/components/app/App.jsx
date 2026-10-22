@@ -1,5 +1,11 @@
+import Hero from "../hero/Hero";
+
 function app() {
-  return <div className="text-[45px]">app</div>;
+  return (
+    <div className="">
+      <Hero />
+    </div>
+  );
 }
 
 export default app;
