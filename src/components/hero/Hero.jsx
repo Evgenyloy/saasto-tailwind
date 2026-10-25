@@ -2,14 +2,10 @@ import Container from "../ui/Container";
 
 function Hero() {
   return (
-    <section className="bg-[#fff8f2FF]">
+    <section className="bg-[#fff8f2FF] py-[180px]">
       <Container>
         <h1 className="text-[28px] font-bold mb-[12px] capitalize leading-[1.6] tracking-wider">
-          A collaborative
-          <br />
-          Time Tracking that
-          <br />
-          you Need
+          A collaborative Time Tracking that you Need
         </h1>
         <p className="text-[16px] text-[#40201eFF] leading-[2.25] mb-[40px]">
           An enim nullam tempor sapien gravida donec enim ipsum porta justo
