@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --spacing: 1px;
+   --spacing: 1px; 
+
+  --breakpoint-*: initial;
+  --breakpoint-mobile: 350px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1200px;
 }
