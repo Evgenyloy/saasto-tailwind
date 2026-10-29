@@ -24,7 +24,7 @@ function Header() {
 
           <nav className="mobile:hidden tablet:hidden desktop:block">
             <ul className="flex gap-48">
-              <NavLinks />
+              <NavLinks isOpen={isOpen} />
             </ul>
           </nav>
 
@@ -46,24 +46,32 @@ function Header() {
 
 export default Header;
 
-function Link({ children, onClick }) {
+function Link({ children, onClick, isOpen }) {
   return (
     <li
       onClick={onClick}
-      className="cursor-pointer hover:-translate-y-2 relative p-10 transition-all duration-300 hover:text-[#ff553eFF]"
+      className={`cursor-pointer ${isOpen ? "" : "hover:-translate-y-2"}  relative p-10 transition-all duration-300 hover:text-[#ff553eFF]`}
     >
       {children}
     </li>
   );
 }
 
-function NavLinks({ children, closeMenu }) {
+function NavLinks({ children, closeMenu, isOpen }) {
   return (
     <>
-      <Link onClick={closeMenu}>Demos</Link>
-      <Link onClick={closeMenu}>Features</Link>
-      <Link onClick={closeMenu}>Pricing</Link>
-      <Link onClick={closeMenu}>Contact</Link>
+      <Link onClick={closeMenu} isOpen={isOpen}>
+        Demos
+      </Link>
+      <Link onClick={closeMenu} isOpen={isOpen}>
+        Features
+      </Link>
+      <Link onClick={closeMenu} isOpen={isOpen}>
+        Pricing
+      </Link>
+      <Link onClick={closeMenu} isOpen={isOpen}>
+        Contact
+      </Link>
     </>
   );
 }
@@ -92,21 +100,20 @@ function Burger({ isOpen, onClick }) {
 function MobileMenu({ isOpen, closeMenu }) {
   return (
     <>
-      <div
-        onClick={closeMenu}
-        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 desktop:hidden ${
-          isOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
-      />
-
       <aside
-        className={`fixed right-0 top-0 z-50 h-full w-[280px] bg-white p-6 shadow-2xl transition-transform duration-300 desktop:hidden ${
+        className={`bg-gray-50 pt-100 flex flex-col justify-start items-center fixed right-0 top-150 z-50 h-full w-full  p-6 shadow-2xl transition-transform duration-300 desktop:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <ul className="mt-20 flex flex-col gap-2">
-          <NavLinks closeMenu={closeMenu} />
+        <ul className="relative mt-20 flex flex-col gap-2 after:w-full after:h-2 after:bg-gray-300 after:left-0 after:top-0 after:content-['']">
+          <NavLinks closeMenu={closeMenu} isOpen={isOpen} />
         </ul>
+        <button className="p-10 transition-all duration-300 hover:text-[#ff553eFF] text-left cursor-pointer">
+          Login
+        </button>
+        <button className="p-10 transition-all duration-300 hover:text-[#ff553eFF] text-left cursor-pointer">
+          Sign up
+        </button>
       </aside>
     </>
   );
