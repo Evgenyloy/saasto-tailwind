@@ -2,7 +2,7 @@ import Container from "../ui/Container";
 
 function Hero() {
   return (
-    <section className="bg-[#fff8f2FF] py-[180px]">
+    <section className="bg-[#fff8f2FF] desktop:py-[180px] tablet:py-[100px] mobile:py-[50px] tiny:py-[50px]">
       <Container>
         <h1 className="text-[28px] font-bold mb-[12px] capitalize leading-[1.6] tracking-wider">
           A collaborative Time Tracking that you Need

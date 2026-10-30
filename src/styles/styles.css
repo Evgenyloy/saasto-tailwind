@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-   --spacing: 1px; 
+  --spacing: 1px;
 
   --breakpoint-*: initial;
   --breakpoint-mobile: 350px;
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1200px;
+}
+
+@custom-variant tiny (@media (width < 350px));
+
+html,
+body {
+  overflow-x: hidden;
 }

@@ -1,5 +1,5 @@
 import Container from "../ui/Container";
-import logo from "../../../public/assets/images/logo/logo.png";
+import logo from "/assets/images/logo/logo.png";
 import { useState } from "react";
 
 function Header() {
@@ -22,13 +22,13 @@ function Header() {
             <span className="ml-10 text-[30px] font-bold">SaaSto</span>
           </div>
 
-          <nav className="mobile:hidden tablet:hidden desktop:block">
+          <nav className="tiny:hidden mobile:hidden tablet:hidden desktop:block">
             <ul className="flex gap-48">
               <NavLinks isOpen={isOpen} />
             </ul>
           </nav>
 
-          <div className="mobile:hidden tablet:hidden desktop:block gap-[36px] ">
+          <div className="tiny:hidden mobile:hidden tablet:hidden desktop:block gap-[36px] ">
             <button className="text-[#ff553eFF] cursor-pointer transition-transform duration-200 hover:scale-115 hover:text-[#e62538] mr-10">
               Login
             </button>
@@ -82,7 +82,7 @@ function Burger({ isOpen, onClick }) {
       onClick={onClick}
       aria-label="Toggle menu"
       aria-expanded={isOpen}
-      className="mobile:flex tablet:flex desktop:hidden flex-col gap-6  cursor-pointer h-40 w-40 justify-center items-center"
+      className="tiny:flex mobile:flex tablet:flex desktop:hidden flex-col gap-6  cursor-pointer h-40 w-40 justify-center items-center"
     >
       <span
         className={`block w-30 h-3 bg-black duration-200    ${isOpen ? "translate-y-8 rotate-45" : ""}`}
@@ -101,19 +101,21 @@ function MobileMenu({ isOpen, closeMenu }) {
   return (
     <>
       <aside
-        className={`bg-gray-50 pt-100 flex flex-col justify-start items-center fixed right-0 top-150 z-50 h-full w-full  p-6 shadow-2xl transition-transform duration-300 desktop:hidden ${
+        className={`bg-white pt-100 flex flex-col justify-start items-center fixed right-0 top-150 z-50 h-full w-full  p-6 shadow-2xl transition-transform duration-300 desktop:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <ul className="relative mt-20 flex flex-col gap-2 after:w-full after:h-2 after:bg-gray-300 after:left-0 after:top-0 after:content-['']">
           <NavLinks closeMenu={closeMenu} isOpen={isOpen} />
         </ul>
-        <button className="p-10 transition-all duration-300 hover:text-[#ff553eFF] text-left cursor-pointer">
-          Login
-        </button>
-        <button className="p-10 transition-all duration-300 hover:text-[#ff553eFF] text-left cursor-pointer">
-          Sign up
-        </button>
+        <div className="flex flex-col justify-start items-center">
+          <button className="p-10 transition-all duration-300 hover:text-[#ff553eFF] cursor-pointer self-start">
+            Login
+          </button>
+          <button className="p-10 transition-all duration-300 hover:text-[#ff553eFF] cursor-pointer self-start">
+            Sign up
+          </button>
+        </div>
       </aside>
     </>
   );
