@@ -2,16 +2,20 @@ import Container from "../ui/Container";
 
 function Hero() {
   return (
-    <section className="bg-[#fff8f2FF] desktop:py-[180px] tablet:py-[100px] mobile:py-[50px] tiny:py-[50px]">
+    <section
+      className="bg-[#fff8f2FF] desktop:py-[180px] tablet:py-[100px] mobile:py-[50px] tiny:py-[50px] text-center 
+    
+    "
+    >
       <Container>
-        <h1 className="text-[28px] font-bold mb-[12px] capitalize leading-[1.6] tracking-wider">
+        <h1 className="text-[28px] font-bold mb-[12px] capitalize leading-[1.6] tracking-wider desktop:text-[54px]">
           A collaborative Time Tracking that you Need
         </h1>
         <p className="text-[16px] text-[#40201eFF] leading-[2.25] mb-[40px]">
           An enim nullam tempor sapien gravida donec enim ipsum porta justo
           congue magna at pretium purus pretium ligula
         </p>
-        <button className="px-48 py-24 bg-[#ff553eFF] rounded-[100px] text-white font-[500] text-[18px]">
+        <button className="px-48 py-24 bg-[#ff553eFF] rounded-[100px] text-white font-[500] text-[18px] cursor-pointer">
           Start 14 Days Trial
         </button>
       </Container>

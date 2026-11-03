@@ -17,7 +17,7 @@ const data = [
 
 function Statistics() {
   return (
-    <div className="">
+    <section className="">
       <Container>
         <div
           className="flex tablet:flex-row flex-col justify-center items-center p-[40px] 
@@ -26,8 +26,8 @@ function Statistics() {
           {data.map((item) => (
             <div
               className="tablet:after:content-none desktop:after:content-none
-              desktop:px-100
-               flex flex-col justify-center items-center after:content-[''] mobile:mb-98 tiny:mb-98
+              desktop:px-100 mobile:not-last:mb-98 tablet:not-last:mb-0 desktop:not-last:mb-0 tiny:not-last:mb-98
+               flex flex-col justify-center items-center after:content-[''] 
                 last:after:content-none after:h-[1px] after:w-200 after:bg-gray-300
                  after:top-0 after:right-0 after:translate-y-50 relative"
               key={crypto.randomUUID()}
@@ -38,7 +38,7 @@ function Statistics() {
           ))}
         </div>
       </Container>
-    </div>
+    </section>
   );
 }
 
