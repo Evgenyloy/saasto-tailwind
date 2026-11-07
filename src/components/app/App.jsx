@@ -3,6 +3,7 @@ import Hero from "../hero/Hero";
 import Statistics from "../statistics/Statistics";
 import Features from "../features/Features";
 import Analytics from "../analytics/Analytics";
+import Tracker from "../tracker/Tracker";
 
 function app() {
   return (
@@ -12,6 +13,7 @@ function app() {
       <Statistics />
       <Features />
       <Analytics />
+      <Tracker />
     </div>
   );
 }
