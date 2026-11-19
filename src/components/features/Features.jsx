@@ -11,7 +11,7 @@ const data = [
 
 function Features() {
   return (
-    <section className="py-[50px]">
+    <section className="desktop:py-[150px] tablet:py-[100px] mobile:py-[50px]">
       <Container>
         <h2
           className="tiny:text-[24px] mobile:text-[24px] tablet:text-[24px] font-semibold mb-[14px] text-center
